@@ -36,18 +36,25 @@ This project ingests, stores, processes, models, and serves air-quality forecast
 ## Repository Structure
 ```text
 .
-├── api.py                   # FastAPI application
-├── Dockerfile               # Builds the API container
-├── docker-compose.yml       # Orchestrates API + TimescaleDB
+├── 00-timescaledb.sql        # TimescaleDB extension setup
+├── 01-create-tables.sql      # DB table definitions
+├── 02-load-agrimonia.sql     # Agrimonia load script (SQL)
+├── api.py                    # FastAPI application
+├── Dockerfile                # Builds the API container
+├── docker-compose.yml        # Orchestrates API + TimescaleDB
 ├── data/
-│   ├── agrimonia_daily.csv  # Final daily dataset
-│   └── ...                  # Raw & intermediate CSVs
+│   ├── agrimonia_daily.csv   # Final daily dataset
+│   └── ...                   # Raw & intermediate CSVs
 ├── db/
-│   └── init.sql             # DB schema & hypertable setup
-├── load_agrimonia.py        # Script to load Agrimonia CSV into Postgres/Timescale
-├── load_fires.py            # Script to load fire counts into Postgres/Timescale
-├── notebooks/               # Ingestion, processing, modeling notebooks
-└── README.md                # <-- You are here
+│   └── init.sql              # DB schema & hypertable setup
+├── load_agrimonia.py         # Script to load Agrimonia CSV into Postgres/Timescale
+├── load_fires.py             # Script to load fire counts into Postgres/Timescale
+├── models/                   # Trained model files (.joblib, etc.)
+├── notebooks/                # Ingestion, processing, modeling notebooks
+├── requirements.txt          # Python dependencies
+├── venv/                     # Local virtual environment
+└── README.md                 # <-- You are here
+
 ```
 
 ## Local Setup
