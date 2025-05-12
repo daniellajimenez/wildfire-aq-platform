@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+# Database
+*.sqlite3
+# Virtual envs
+venv/
+env/
+# Mac
+.DS_Store
