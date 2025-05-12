@@ -8,7 +8,20 @@
 
 ## Project Overview
 
-This project ingests, stores, processes, models, and serves air-quality forecasts via a REST API. Key components:
+This project implements a modular and scalable data pipeline for air quality forecasting, leveraging historical data from multiple sources including satellite fire data (NASA FIRMS), and pollution data (AGRIMONIA). The system integrates data ingestion, storage using PostgreSQL with TimescaleDB for efficient time series handling, and machine learning models (XGBoost) for PM2.5 concentration forecasting.
+
+Although this pipeline operates on historical data, it is designed with future extensibility in mind to support real-time data ingestion and forecasting with minimal architectural changes. API endpoints for serving predictions are built using FastAPI, and the entire platform is containerized with Docker for portability and scalability.
+
+Key Features:
+- End-to-end pipeline covering data ingestion, processing, storage, and forecasting
+- Time series optimized storage using TimescaleDB
+- Machine learning model development using XGBoost for air quality prediction
+- API development with FastAPI to serve model predictions
+- Fully containerized deployment using Docker and Docker Compose
+- Future extensibility: Architecture supports easy transition to real-time data streams
+
+
+Components:
 
 1. **Ingest**  
    - **Air Pollution data** (AGRIMONIA)
